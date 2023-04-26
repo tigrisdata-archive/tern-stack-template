@@ -4,7 +4,8 @@
 
 The TERN stack:
 
-- [**T**igris](https://www.tigrisdata.com): Serverless NoSQL & Search platform
+- [**T**igris](https://www.tigrisdata.com?utm_source=github&utm_medium=github&utm_campaign=tern-template):
+  Serverless NoSQL & Search platform
 - [**E**xpress.js](https://expressjs.com/): Fast, unopinionated, minimalist web
   framework for Node.js
 - [**R**eact](https://react.dev/): The library for web and native user
@@ -42,7 +43,8 @@ The `client` was initially created using the
 [create-react-app](https://github.com/facebook/create-react-app) TypeScript
 template, and the `server` is a TypeScript application using
 [Express.js](https://expressjs.com/), the [Node.js runtime](https://nodejs.org),
-and [Tigris](https://www.tigrisdata.com).
+and
+[Tigris](https://www.tigrisdata.com?utm_source=github&utm_medium=github&utm_campaign=tern-template).
 
 ## Client
 
@@ -114,7 +116,7 @@ The application will reload if you make edits.
 ### `npm run setup`
 
 Registers the Tigris data models with Tigris. For more info, see the
-[Tigris data modeling with TypeScript docs](https://www.tigrisdata.com/docs/sdkstools/typescript/database/datamodel/).
+[Tigris data modeling with TypeScript docs](https://www.tigrisdata.com/docs/sdkstools/typescript/database/datamodel/?utm_source=github&utm_medium=github&utm_campaign=tern-template).
 
 ### `npm run start`
 
