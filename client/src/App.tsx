@@ -1,17 +1,44 @@
-import React, { MouseEvent, MouseEventHandler } from "react";
+import React, {
+  MouseEvent,
+  MouseEventHandler,
+  useEffect,
+  useState,
+} from "react";
 import "./App.css";
 import IconExpress from "./icons/IconExpress";
 import IconReact from "./icons/IconReact";
 import IconNodeJs from "./icons/IconNodeJs";
 import IconTigris from "./icons/IconTigris";
 
-enum EVENT_TYPES {
+// import { Event, EVENT_TYPES } from "../../server/src/db/models/event";
+export enum EVENT_TYPES {
   Click,
   PageView,
   PageLeave,
 }
 
+const getEvents = async (): Promise<Event[]> => {
+  const result = await fetch("http://localhost:3001/events");
+  if (result.status === 200) {
+    return result.json();
+  } else {
+    const errorMessage = "Could not retrieve events";
+    const errorJson = await result.json();
+    console.error(errorMessage, errorJson);
+    throw new Error(errorMessage, errorJson);
+  }
+};
+
 function App() {
+  // const [events, setEvents] = useState<Event[]>([]);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const events = await getEvents();
+  //     setEvents(events);
+  //   })();
+  // }, []);
+
   const handleClick: MouseEventHandler<HTMLDivElement> = async (
     event: MouseEvent<HTMLDivElement>
   ) => {

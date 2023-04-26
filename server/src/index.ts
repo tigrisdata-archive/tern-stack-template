@@ -21,7 +21,7 @@ app.use(cors());
 
 // Reads config from environment variables
 const tigris = new Tigris();
-const events = tigris.getDatabase().getCollection<Event>(Event);
+const eventsCollection = tigris.getDatabase().getCollection<Event>(Event);
 
 const port = process.env.PORT || 3001;
 
@@ -59,12 +59,17 @@ app.get("/", (req: Request, res: Response) => {
   res.send("TERN server: Express.js with TypeScript");
 });
 
+app.get("/events", async (req: Request, res: Response) => {
+  const events = await eventsCollection.findMany().toArray();
+  res.status(200).json(events);
+});
+
 app.post(
   "/events",
   validateInput(postEventSchema),
   async (req: Request, res: Response) => {
     // the req.body has been validated by the validateInput middleware
-    const insertedEvent = await events.insertOne(req.body);
+    const insertedEvent = await eventsCollection.insertOne(req.body);
 
     res.status(201).json(insertedEvent);
   }
