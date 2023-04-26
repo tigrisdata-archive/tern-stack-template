@@ -1,4 +1,4 @@
-# A TERN stack template
+# The TERN stack template
 
 ![The TERN stack logo - Tigris, Express.js, React, and Node.js](./tern-logo-transparent-bg.png)
 
