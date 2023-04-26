@@ -4,6 +4,7 @@ import IconExpress from "./icons/IconExpress.tsx";
 import IconReact from "./icons/IconReact.tsx";
 import IconNodeJs from "./icons/IconNodeJs.tsx";
 import IconTigris from "./icons/IconTigris.tsx";
+import IconStar from "./icons/IconStar.tsx";
 
 import {
   IEvent,
@@ -112,16 +113,16 @@ function App() {
             if (event.eventType === EVENT_TYPES.Click) {
               typedEventData = event.eventData as IClickEventData;
               return (
-                <div
+                <IconStar
+                  className="App-star"
                   key={event.id}
                   style={{
                     position: "absolute",
                     top: typedEventData.clickY,
                     left: typedEventData.clickX,
                   }}
-                >
-                  x
-                </div>
+                  fill="#F9B80D"
+                />
               );
             } else {
               typedEventData = event.eventData as IPageEventData;

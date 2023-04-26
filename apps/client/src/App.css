@@ -60,6 +60,10 @@
   .App-tern-logos .App-tern-logo {
     animation: spin infinite 20s linear;
   }
+
+  .App-star {
+    animation: spin infinite ease 30s linear;
+  }
 }
 
 @keyframes spin {
