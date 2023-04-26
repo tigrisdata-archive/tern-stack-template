@@ -24,6 +24,7 @@
 
 .App-tern-letters {
   margin: 30px 0;
+  font-weight: 600;
 }
 
 .App-tern-logos {
@@ -62,7 +63,12 @@
   }
 
   .App-star {
-    animation: spin infinite ease 30s linear;
+    animation: spin infinite 30s linear;
+    animation: fadeIn 2s;
+  }
+
+  .App-star.deleted {
+    animation: fadeOut 2s;
   }
 }
 
@@ -72,5 +78,23 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

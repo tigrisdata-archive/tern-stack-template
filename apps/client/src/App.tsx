@@ -61,6 +61,21 @@ function App() {
     }
   };
 
+  const handleStarClick = ({
+    domEvent,
+    eventId,
+  }: {
+    domEvent: MouseEvent<SVGSVGElement, globalThis.MouseEvent>;
+    eventId: string | undefined;
+  }) => {
+    domEvent.stopPropagation();
+
+    // TODO: API call to remove
+    domEvent.currentTarget.classList.add("deleted");
+
+    console.log("star with ID", eventId, "clicked");
+  };
+
   return (
     <div className="App" onClick={handleClick}>
       <main className="App-main">
@@ -122,6 +137,9 @@ function App() {
                     left: typedEventData.clickX,
                   }}
                   fill="#F9B80D"
+                  onClick={(e) =>
+                    handleStarClick({ domEvent: e, eventId: event.id })
+                  }
                 />
               );
             } else {
