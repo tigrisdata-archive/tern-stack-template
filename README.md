@@ -46,6 +46,23 @@ template, and the `server` is a TypeScript application using
 and
 [Tigris](https://www.tigrisdata.com?utm_source=github&utm_medium=github&utm_campaign=tern-template).
 
+## Prerequisites
+
+To use the TERN stack template you'll either need a
+[Tigris Cloud account](https://console.preview.tigrisdata.cloud/signup?utm_source=github&utm_medium=github&utm_campaign=tern-template)
+or a
+[self-hosted Tigris](https://www.tigrisdata.com/docs/concepts/platform/self-host/?utm_source=github&utm_medium=github&utm_campaign=tern-template)
+up and running.
+
+You'll also need to install the
+[Tigris CLI](https://github.com/tigrisdata/tigris-cli) and login to your Tigris
+instance:
+
+```sh
+npm i -g @tigrisdata/tigris-cli
+tigris login
+```
+
 ## Client
 
 The client is a TypeScript React application. To learn React, check out the
@@ -103,6 +120,17 @@ customize it when you are ready for it.
 
 The server is an Express.js TypeScript application. To learn Express.js, check
 out the [Express.js website](https://expressjs.com/).
+
+Before you start the server you'll need to create a Tigris project and save the
+project configuration in a `.env.local` file:
+
+```sh
+cd server
+tigris create project my-tern-app --create-env-vars
+mv .env .env.local
+```
+
+With the Tigris project config in place you can run the server.
 
 In the `server` directory, you can run:
 

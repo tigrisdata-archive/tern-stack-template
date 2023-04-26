@@ -1,13 +1,45 @@
-import React from "react";
+import React, { MouseEvent, MouseEventHandler } from "react";
 import "./App.css";
 import IconExpress from "./icons/IconExpress";
 import IconReact from "./icons/IconReact";
 import IconNodeJs from "./icons/IconNodeJs";
 import IconTigris from "./icons/IconTigris";
 
+enum EVENT_TYPES {
+  Click,
+  PageView,
+  PageLeave,
+}
+
 function App() {
+  const handleClick: MouseEventHandler<HTMLDivElement> = async (
+    event: MouseEvent<HTMLDivElement>
+  ) => {
+    const result = await fetch("http://localhost:3001/events", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        eventType: EVENT_TYPES.Click,
+        eventData: {
+          url: document.location.href,
+          clickX: event.clientX,
+          clickY: event.clientY,
+        },
+      }),
+    });
+
+    if (result.status === 201) {
+      const insertedEvent = await result.json();
+      console.log(insertedEvent);
+    } else {
+      console.error("unexpected POST response", await result.json());
+    }
+  };
+
   return (
-    <div className="App">
+    <div className="App" onClick={handleClick}>
       <header className="App-header">
         <div className="App-tern-letters">
           <span>T</span>
