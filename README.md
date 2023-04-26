@@ -30,7 +30,7 @@ The template has the following structure and make use of
 │       ├── scripts
 │       └── src
 └── packages
-    └── tigris
+    └── shared
         └── src
 ```
 
@@ -43,8 +43,8 @@ The repo has the following workspaces:
   [Express.js](https://expressjs.com/), the
   [Node.js runtime](https://nodejs.org), and
   [Tigris](https://www.tigrisdata.com?utm_source=github&utm_medium=github&utm_campaign=tern-template).
-- `@tern-app/shared`: for data models that are used in both the
-  `@tern-app/server` and `@tern-app/client`
+- `@tern-app/shared`: for code that is used in both the `@tern-app/server` and
+  `@tern-app/client`
 
 ## Prerequisites
 
