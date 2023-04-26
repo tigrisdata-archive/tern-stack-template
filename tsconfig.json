@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/tigris" },
+    { "path": "apps/client" },
+    { "path": "apps/server" }
+  ]
+}

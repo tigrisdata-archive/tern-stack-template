@@ -2,7 +2,7 @@ import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { z } from "zod";
 import validateInput from "./utils/validateInput";
-import { Event, EVENT_TYPES } from "./db/models/event";
+import { Event, EVENT_TYPES } from "@tern-app/tigris";
 import { Tigris } from "@tigrisdata/core";
 
 import * as dotenv from "dotenv";
