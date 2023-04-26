@@ -32,7 +32,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "zod": "^3.21.4",
-    "@tern-app/tigris": "0.1.0"
+    "@tern-app/shared": "0.1.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

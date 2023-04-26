@@ -1,22 +1,22 @@
 import {
+  IPageEventData,
+  IClickEventData,
+  IEvent,
+  EVENT_TYPES,
+} from "@tern-app/shared";
+import {
   Field,
-  PrimaryKey,
   TigrisCollection,
+  PrimaryKey,
   TigrisDataTypes,
 } from "@tigrisdata/core";
 
-export enum EVENT_TYPES {
-  Click,
-  PageView,
-  PageLeave,
-}
-
-export class PageEventData {
+export class PageEventData implements IPageEventData {
   @Field()
   url!: string;
 }
 
-export class ClickEventData extends PageEventData {
+export class ClickEventData extends PageEventData implements IClickEventData {
   @Field()
   clickX!: number;
 
@@ -25,7 +25,7 @@ export class ClickEventData extends PageEventData {
 }
 
 @TigrisCollection("events")
-export class Event {
+export class Event implements IEvent {
   @PrimaryKey(TigrisDataTypes.UUID, { order: 1, autoGenerate: true })
   id?: string;
 

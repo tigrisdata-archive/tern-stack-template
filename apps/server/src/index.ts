@@ -2,8 +2,9 @@ import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { z } from "zod";
 import validateInput from "./utils/validateInput";
-import { Event, EVENT_TYPES } from "@tern-app/tigris";
+import { EVENT_TYPES } from "@tern-app/shared";
 import { Tigris } from "@tigrisdata/core";
+import { Event } from "./db/models/event";
 
 import * as dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });

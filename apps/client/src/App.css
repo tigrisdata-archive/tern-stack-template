@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-header {
+.App-main {
   background-color: #0f2833;
   min-height: 100vh;
   display: flex;
@@ -23,7 +23,7 @@
 }
 
 .App-tern-letters {
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
 
 .App-tern-logos {
