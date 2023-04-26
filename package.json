@@ -2,13 +2,10 @@
   "name": "tern-app",
   "version": "0.1.0",
   "description": "![The TERN stack logo - Tigris, Express.js, React, and Node.js](./tern-logo-transparent-bg.png)",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "workspaces": [
     "apps/*",
     "packages/*"
