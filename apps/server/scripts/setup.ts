@@ -1,5 +1,5 @@
 import { Tigris } from "@tigrisdata/core";
-import { Event } from "../src/db/models/event";
+import { Event } from "@tern-app/tigris";
 
 import dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });
