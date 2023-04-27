@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "description": "![The TERN stack logo - Tigris, Express.js, React, and Node.js](./tern-logo-transparent-bg.png)",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tigris:init": "tigris create project $npm_config_project -o ./apps/server/ --create-env-file && mv ./apps/server/.env ./apps/server/.env.local && echo Created ./apps/server/.env.local ⚡️",
+    "dev": "npm run dev -w=client & npm run dev -w=server"
   },
   "license": "Apache-2.0",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "@tigrisdata/tigris-cli": "^1.0.0-beta.24"
+  }
 }

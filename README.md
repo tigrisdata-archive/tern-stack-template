@@ -48,33 +48,64 @@ The repo has the following workspaces:
 
 ## Prerequisites
 
-### A Tigris instance
-
 To use the TERN stack template you'll either need a
 [Tigris Cloud account](https://console.preview.tigrisdata.cloud/signup?utm_source=github&utm_medium=github&utm_campaign=tern-template)
 or a
 [self-hosted Tigris](https://www.tigrisdata.com/docs/concepts/platform/self-host/?utm_source=github&utm_medium=github&utm_campaign=tern-template)
 up and running.
 
-### The Tigris CLI
+## Quickstart
 
-You'll also need to install the
-[Tigris CLI](https://github.com/tigrisdata/tigris-cli) and login to your Tigris
-instance:
+### Install dependencies
 
-```sh
-npm i -g @tigrisdata/tigris-cli
-tigris login
-```
-
-### Install dependencies for all workspaces
-
-You can install the dependencies for all the workspaces using the following
-command:
+Install the dependencies for all the workspaces using the following command:
 
 ```sh
 npm i -ws
 ```
+
+### Create a Tigris project
+
+There's a script in `./package.json` called `tigris:init` that does that for
+you. It takes a `--project` argument:
+
+```sh
+npm run tigris:init --project=tern-app
+```
+
+Use a different value to `tern-app` for your Tigris project name if you like.
+
+This will then take you through the login flow to authenticate the
+[Tigris CLI](https://github.com/tigrisdata/tigris-cli) with Tigris Cloud (by
+default). If you haven't already signed up, you can also go through the signup
+flow.
+
+Once the CLI has been authenticated a file, `apps/server/.env.local`, will be
+created containing your Tigris project config.
+
+### Run the client
+
+In one terminal run:
+
+```sh
+npm run dev -w=@tern-app/client
+```
+
+The client will run on `localhost:3000` by default.
+
+### Run the server
+
+In another terminal run:
+
+```sh
+npm run dev -w=@tern-app/server
+```
+
+The server will run on `localhost:3001` by default.
+
+### Start building
+
+Open the code in your favourite editor and start building your TERN app.
 
 ## Client (`apps/client`)
 
