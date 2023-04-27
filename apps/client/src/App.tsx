@@ -12,18 +12,7 @@ import {
   IClickEventData,
   IPageEventData,
 } from "@tern-app/shared";
-
-const getEvents = async (): Promise<IEvent[]> => {
-  const result = await fetch("http://localhost:3001/events");
-  if (result.status === 200) {
-    return result.json();
-  } else {
-    const errorMessage = "Could not retrieve events";
-    const errorJson = await result.json();
-    console.error(errorMessage, errorJson);
-    throw new Error(errorMessage, errorJson);
-  }
-};
+import { captureEvent, getEvents } from "./lib/analytics.js";
 
 function App() {
   const [events, setEvents] = useState<IEvent[]>([]);
@@ -38,27 +27,17 @@ function App() {
   const handleClick: MouseEventHandler<HTMLDivElement> = async (
     event: MouseEvent<HTMLDivElement>
   ) => {
-    const result = await fetch("http://localhost:3001/events", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
+    const eventPayload: IEvent = {
+      eventType: EVENT_TYPES.Click,
+      eventData: {
+        url: document.location.href,
+        clickX: event.clientX,
+        clickY: event.clientY,
       },
-      body: JSON.stringify({
-        eventType: EVENT_TYPES.Click,
-        eventData: {
-          url: document.location.href,
-          clickX: event.clientX,
-          clickY: event.clientY,
-        },
-      }),
-    });
+    };
 
-    if (result.status === 201) {
-      const insertedEvent = await result.json();
-      setEvents((prev) => [...prev, insertedEvent]);
-    } else {
-      console.error("unexpected POST response", await result.json());
-    }
+    const insertedEvent = await captureEvent({ eventPayload });
+    setEvents((prev) => [...prev, insertedEvent]);
   };
 
   const handleStarClick = ({
