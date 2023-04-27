@@ -4,8 +4,6 @@ import { AnyZodObject } from "zod";
 const validateInput =
   (schema: AnyZodObject) =>
   async (req: Request, res: Response, next: NextFunction) => {
-    console.log(req.body);
-
     const result = await schema.safeParseAsync({
       body: req.body,
       query: req.query,

@@ -76,6 +76,27 @@ app.post(
   }
 );
 
+const deleteEventSchema = z.object({
+  body: z.object({
+    id: z.string({
+      required_error: "id is required",
+    }),
+  }),
+});
+
+app.delete(
+  "/events",
+  validateInput(deleteEventSchema),
+  async (req: Request, res: Response) => {
+    // the req.body has been validated by the validateInput middleware
+    const deleteResult = await eventsCollection.deleteOne({
+      filter: { id: req.body.id },
+    });
+
+    res.status(200).json(deleteResult);
+  }
+);
+
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });

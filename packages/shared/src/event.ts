@@ -23,3 +23,7 @@ export interface IEvent {
 
   eventData: IPageEventData | IClickEventData;
 }
+
+export interface IEventDeleteResult {
+  status: "deleted";
+}

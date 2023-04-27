@@ -63,8 +63,7 @@
   }
 
   .App-star {
-    animation: spin infinite 30s linear;
-    animation: fadeIn 2s;
+    animation: spin infinite 30s linear, fadeIn 2s;
   }
 
   .App-star.deleted {

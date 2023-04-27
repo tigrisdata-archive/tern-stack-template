@@ -11,8 +11,9 @@ import {
   EVENT_TYPES,
   IClickEventData,
   IPageEventData,
+  IEventDeleteResult,
 } from "@tern-app/shared";
-import { captureEvent, getEvents } from "./lib/analytics.js";
+import { captureEvent, deleteEvent, getEvents } from "./lib/analytics.js";
 
 function App() {
   const [events, setEvents] = useState<IEvent[]>([]);
@@ -31,8 +32,8 @@ function App() {
       eventType: EVENT_TYPES.Click,
       eventData: {
         url: document.location.href,
-        clickX: event.clientX,
-        clickY: event.clientY,
+        clickX: event.pageX,
+        clickY: event.pageY,
       },
     };
 
@@ -40,7 +41,7 @@ function App() {
     setEvents((prev) => [...prev, insertedEvent]);
   };
 
-  const handleStarClick = ({
+  const handleStarClick = async ({
     domEvent,
     eventId,
   }: {
@@ -49,10 +50,14 @@ function App() {
   }) => {
     domEvent.stopPropagation();
 
-    // TODO: API call to remove
-    domEvent.currentTarget.classList.add("deleted");
+    if (!eventId) return;
 
-    console.log("star with ID", eventId, "clicked");
+    const result: IEventDeleteResult = await deleteEvent({ id: eventId });
+    if (result.status === "deleted") {
+      const removeIndex = events.findIndex((ev) => ev.id === eventId);
+      events.splice(removeIndex, 1);
+      setEvents([...events]);
+    }
   };
 
   return (
