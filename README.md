@@ -4,8 +4,8 @@
 
 The TERN stack:
 
-- [**T**igris](https://www.tigrisdata.com?utm_source=github&utm_medium=github&utm_campaign=tern-template):
-  Serverless NoSQL & Search platform
+- [**T**igris](https://www.tigrisdata.com?utm_source=github&utm_medium=github&utm_campaign=tern-stack-template):
+  Serverless NoSQL Database & Search platform
 - [**E**xpress.js](https://expressjs.com/): Fast, unopinionated, minimalist web
   framework for Node.js
 - [**R**eact](https://react.dev/): The library for web and native user
@@ -42,16 +42,16 @@ The repo has the following workspaces:
 - `@tern-app/server` in `apps/server`: a TypeScript application using
   [Express.js](https://expressjs.com/), the
   [Node.js runtime](https://nodejs.org), and
-  [Tigris](https://www.tigrisdata.com?utm_source=github&utm_medium=github&utm_campaign=tern-template).
+  [Tigris](https://www.tigrisdata.com?utm_source=github&utm_medium=github&utm_campaign=tern-stack-template).
 - `@tern-app/shared`: for code that is used in both the `@tern-app/server` and
   `@tern-app/client`
 
 ## Prerequisites
 
 To use the TERN stack template you'll either need a
-[Tigris Cloud account](https://console.preview.tigrisdata.cloud/signup?utm_source=github&utm_medium=github&utm_campaign=tern-template)
+[Tigris Cloud account](https://console.preview.tigrisdata.cloud/signup?utm_source=github&utm_medium=github&utm_campaign=tern-stack-template)
 or a
-[self-hosted Tigris](https://www.tigrisdata.com/docs/concepts/platform/self-host/?utm_source=github&utm_medium=github&utm_campaign=tern-template)
+[self-hosted Tigris](https://www.tigrisdata.com/docs/concepts/platform/self-host/?utm_source=github&utm_medium=github&utm_campaign=tern-stack-template)
 up and running.
 
 ## Quickstart
@@ -151,7 +151,7 @@ The application will reload if you make edits.
 #### `npm run setup -w=@tern-app/server`
 
 Registers the Tigris data models with Tigris. For more info, see the
-[Tigris data modeling with TypeScript docs](https://www.tigrisdata.com/docs/sdkstools/typescript/database/datamodel/?utm_source=github&utm_medium=github&utm_campaign=tern-template).
+[Tigris data modeling with TypeScript docs](https://www.tigrisdata.com/docs/sdkstools/typescript/database/datamodel/?utm_source=github&utm_medium=github&utm_campaign=tern-stack-template).
 
 #### `npm run start -w=@tern-app/server`
 

@@ -78,7 +78,7 @@ function App() {
         <p>The TERN stack consists of:</p>
         <ul className="App-tech-list">
           <li>
-            <a href="https://www.tigrisdata.com?utm_source=github&utm_medium=github&utm_campaign=tern-template">
+            <a href="https://www.tigrisdata.com?utm_source=github&utm_medium=github&utm_campaign=tern-stack-template">
               Tigris
             </a>
           </li>
@@ -99,7 +99,7 @@ function App() {
         <section className="App-section">
           <a
             className="App-link"
-            href="https://www.tigrisdata.com/blog/tern-stack/?utm_source=template&utm_medium=template&utm_campaign=tern-template"
+            href="https://www.tigrisdata.com/blog/tern-stack/?utm_source=template&utm_medium=template&utm_campaign=tern-stack-template"
             target="_blank"
             rel="noopener noreferrer"
           >
