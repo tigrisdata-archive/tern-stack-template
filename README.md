@@ -107,14 +107,16 @@ The server will run on `localhost:3001` by default.
 
 Open the code in your favourite editor and start building your TERN app.
 
-## Client (`apps/client`)
+## Additional scripts
+
+### Client (`apps/client`)
 
 The client is a TypeScript React application. To learn React, check out the
 [React documentation](https://reactjs.org/).
 
 For the `apps/client` workspace, you can run:
 
-### `npm dev -w=@tern-app/client`
+#### `npm dev -w=@tern-app/client`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -122,44 +124,40 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm run build -w=@tern-app/client`
+#### `npm run build -w=@tern-app/client`
 
 Builds the app for production to the `dist` folder.
 
-## Server (`apps/server`)
+### Server (`apps/server`)
 
 The server is an Express.js TypeScript application. To learn Express.js, check
 out the [Express.js website](https://expressjs.com/).
 
 Before you start the server you'll need to create a Tigris project and save the
-project configuration in a `.env.local` file:
-
-```sh
-tigris create project my-tern-app --create-env-vars -o apps/server
-mv apps/server/.env apps/server/.env.local
-```
+project configuration in a `.env.local` file. The top-level `package.json` has a
+script for that. See the Quickstart section for details.
 
 With the Tigris project config in place you can run the server.
 
 For the `apps/server` workspace, you can run:
 
-### `npm run dev -w=@tern-app/server`
+#### `npm run dev -w=@tern-app/server`
 
 Runs the app in the development mode, running on
 [http://localhost:3001](http://localhost:3001).
 
 The application will reload if you make edits.
 
-### `npm run setup -w=@tern-app/server`
+#### `npm run setup -w=@tern-app/server`
 
 Registers the Tigris data models with Tigris. For more info, see the
 [Tigris data modeling with TypeScript docs](https://www.tigrisdata.com/docs/sdkstools/typescript/database/datamodel/?utm_source=github&utm_medium=github&utm_campaign=tern-template).
 
-### `npm run start -w=@tern-app/server`
+#### `npm run start -w=@tern-app/server`
 
 Runs the built output from `dist`.
 
-### `npm run build -w=@tern-app/server`
+#### `npm run build -w=@tern-app/server`
 
 Builds the app for production to the `dist` folder.\
 It correctly bundles React in production mode and optimizes the build for the best
