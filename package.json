@@ -13,6 +13,6 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@tigrisdata/tigris-cli": "^1.0.0-beta.24"
+    "@tigrisdata/tigris-cli": "^1.0.0-beta.27"
   }
 }
