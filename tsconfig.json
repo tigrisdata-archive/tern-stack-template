@@ -1,7 +1,7 @@
 {
   "files": [],
   "references": [
-    { "path": "packages/tigris" },
+    { "path": "packages/shared" },
     { "path": "apps/client" },
     { "path": "apps/server" }
   ]
