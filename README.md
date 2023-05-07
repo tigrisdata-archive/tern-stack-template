@@ -153,6 +153,10 @@ The application will reload if you make edits.
 Registers the Tigris data models with Tigris. For more info, see the
 [Tigris data modeling with TypeScript docs](https://www.tigrisdata.com/docs/sdkstools/typescript/database/datamodel/?utm_source=github&utm_medium=github&utm_campaign=tern-stack-template).
 
+
+#### `npm run build -w=@tern-app/shared`  
+Builds the shared package to make them accessible to node
+
 #### `npm run start -w=@tern-app/server`
 
 Runs the built output from `dist`.
