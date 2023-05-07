@@ -2,10 +2,18 @@
   "name": "@tern-app/shared",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/index.js",
+  "exports": {
+    "import": "./dist/mjs/index.js",
+    "require": "./dist/cjs/index.js"
+  },
+  "files": [
+		"dist/**/*"
+	],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc"
+    "build": "npm run build-cjs && npm run build-mjs",
+    "build-cjs": "tsc -p tsconfig.json",
+    "build-mjs": "tsc -p tsconfig-mjs.json"
   },
   "keywords": [],
   "author": "",
