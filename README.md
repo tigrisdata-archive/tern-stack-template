@@ -155,7 +155,7 @@ Registers the Tigris data models with Tigris. For more info, see the
 
 
 #### `npm run build -w=@tern-app/shared`  
-Builds the shared package to make them accessible to node
+Builds the shared package for both ESM and CJS targets.
 
 #### `npm run start -w=@tern-app/server`
 
