@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "",
   "main": "src/index.ts",
+  "exports": {
+    "import": "./dist/mjs/index.js",
+    "require": "./dist/cjs/index.js"
+  },
   "files": [
 		"dist/**/*"
 	],

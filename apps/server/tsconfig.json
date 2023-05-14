@@ -3,5 +3,6 @@
   "compilerOptions": {
     "outDir": "./dist",
     "module": "commonjs"
-  }
+  },
+  "references": [{ "path": "../../packages/shared" }]
 }
