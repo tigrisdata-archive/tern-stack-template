@@ -4,5 +4,9 @@
     "outDir": "./dist",
     "module": "commonjs"
   },
-  "references": [{ "path": "../../packages/shared" }]
+  "references": [
+    {
+      "path": "../../packages/shared/tsconfig.json"
+    }
+  ]
 }
