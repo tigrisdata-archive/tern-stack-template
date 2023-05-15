@@ -10,7 +10,7 @@
     "postbuild": "npm run setup",
     "setup": "npx ts-node ./scripts/setup.ts",
     "prestart": "npm run build",
-    "start": "node dist/src/index.js",
+    "start": "node --conditions=production dist/src/index.js",
     "predev": "npm run setup",
     "dev": "npx nodemon"
   },
